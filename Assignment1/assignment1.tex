@@ -4,6 +4,7 @@
 \usepackage[pdftex]{color}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
+\usepackage{minted}
 
 % Simplifies margin settings
 \usepackage{geometry}
@@ -80,15 +81,27 @@ Peak performance: 32 flops/cycle and 102.4 Gflops/sec
 \textbf{Solution 2}\\ \\
 \textbf{Part a} \\
 Appropriate cost function would involve cost of multiplication, additions and divisions individually. One such example could be following:
-\begin{center}
-$C(n)$ = $C_{add} * N_{add}$ + $C_{mul} * N_{mul}$ + $C_{div} * N_{div}$ + $C_{typecast} * N_{typecast}$
-\end{center}
+\begin{equation}
+\begin{aligned}
+C(n) = C_{add} * N_{add} + C_{mul} * N_{mul} + C_{div} * N_{div} + C_{typecast} * N_{typecast}
+\end{aligned}
+\end{equation}
 \textbf{Part b}
-\begin{center}
-$C(n)$ = $C_{add}*(2(n-1)+1)$ + $C_{mul}*(6(n-1)+2)$ + $C_{div}*(2(n-1)+2)$ +  $C_{typecast}*(2(n-1)+2)$ \\
-$C(n)$ = $C_{add}*(2n-1)$ + $C_{mul}*(6n-4)$ + $C_{div}*(2n)$ +  $C_{typecast}*(2n)$ \\
-$C(n)$ = $flops(n)$ = 12n - 5
-\end{center}
+\begin{equation}
+\begin{aligned}
+C(n) = C_{add} *(2(n-1)+1) + C_{mul} * (6(n-1)+2) + C_{div} * (2(n-1)+2) + C_{typecast} * (2(n-1)+2) \\
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+C(n) = C_{add} *(2n-1) + C_{mul} * (6n-4) + C_{div} * (2n) + C_{typecast} * (2n)
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+C(n) = flops(n) = 12n - 5
+\end{aligned}
+\end{equation}
 
 \textbf{Solution 3}\\ \\
 \textbf{Part a} \\
@@ -135,7 +148,7 @@ The computation is compute bound however, due to dependency in the computation t
 
 \textbf{Solution 4}\\ \\
 \textbf{Part a}
-\lstinputlisting[language=C]{sol.c}
+\inputminted[frame=2]{c}{sol.c}
 \textbf{Part b} \\
 Like in exercise 3 we used RDTSC instruction to measure the number of cycles, in this part I am using the same instruction to count the number of cycle. \\ \\
 \textbf{Part c} 
