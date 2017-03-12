@@ -1,0 +1,6 @@
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles/rebuild_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles/edit_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles/IntelPCM.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/CMakeFiles/rebuild_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/CMakeFiles/edit_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/CMakeFiles/pcm.dir

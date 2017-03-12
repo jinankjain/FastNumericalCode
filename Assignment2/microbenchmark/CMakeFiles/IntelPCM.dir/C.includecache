@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/main.c
+stdio.h
+-
+perf.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/perf.h
+microbenchmark.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/microbenchmark.h
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/microbenchmark.c
+microbenchmark.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/microbenchmark.h
+perf.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/perf.h
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/src/microbenchmark.h
+
+include/perf.h
+stdint.h
+-
+pcm_Export.h
+include/pcm_Export.h
+
+lib/pcm_Export.h
+
