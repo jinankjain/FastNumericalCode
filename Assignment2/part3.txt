@@ -1,0 +1,15 @@
+Measured mul latency     : 5.082500 cycles
+Measured mul throughput  : 0.921914 cycles
+Measured mul gap         : 1.084700 cycles
+
+Measured div latency     : 13.069100 cycles
+Measured div throughput  : 0.138449 cycles
+Measured div gap         : 7.222900 cycles
+
+Measured mul2 latency    : 6.066100 cycles
+Measured mul2 throughput : 0.913409 cycles
+Measured mul2 gap        : 1.094800 cycles
+
+Measured div2 latency    : 20.068300 cycles
+Measured div2 throughput : 0.071091 cycles
+Measured div2 gap        : 14.066400 cycles

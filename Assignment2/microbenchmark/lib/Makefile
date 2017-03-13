@@ -42,19 +42,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.7.2/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.7.2/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark
+CMAKE_SOURCE_DIR = /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark
+CMAKE_BINARY_DIR = /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/mi
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/Cellar/cmake/3.7.2/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -73,7 +73,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/Cellar/cmake/3.7.2/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -83,14 +83,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(CMAKE_COMMAND) -E cmake_progress_start /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/CMakeFiles/progress.marks
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles 0
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(CMAKE_COMMAND) -E cmake_progress_start /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/CMakeFiles/progress.marks
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -100,22 +100,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/CMakeFiles/pcm.dir/rule:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/pcm.dir/rule
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/pcm.dir/rule
 .PHONY : lib/CMakeFiles/pcm.dir/rule
 
 # Convenience name for target.
@@ -125,89 +125,8 @@ pcm: lib/CMakeFiles/pcm.dir/rule
 
 # fast build rule for target.
 pcm/fast:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/build
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/build
 .PHONY : pcm/fast
-
-pcm/MacMSRDriver/DriverInterface.o: pcm/MacMSRDriver/DriverInterface.c.o
-
-.PHONY : pcm/MacMSRDriver/DriverInterface.o
-
-# target to build an object file
-pcm/MacMSRDriver/DriverInterface.c.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/DriverInterface.c.o
-.PHONY : pcm/MacMSRDriver/DriverInterface.c.o
-
-pcm/MacMSRDriver/DriverInterface.i: pcm/MacMSRDriver/DriverInterface.c.i
-
-.PHONY : pcm/MacMSRDriver/DriverInterface.i
-
-# target to preprocess a source file
-pcm/MacMSRDriver/DriverInterface.c.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/DriverInterface.c.i
-.PHONY : pcm/MacMSRDriver/DriverInterface.c.i
-
-pcm/MacMSRDriver/DriverInterface.s: pcm/MacMSRDriver/DriverInterface.c.s
-
-.PHONY : pcm/MacMSRDriver/DriverInterface.s
-
-# target to generate assembly for a file
-pcm/MacMSRDriver/DriverInterface.c.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/DriverInterface.c.s
-.PHONY : pcm/MacMSRDriver/DriverInterface.c.s
-
-pcm/MacMSRDriver/MSRAccessor.o: pcm/MacMSRDriver/MSRAccessor.cpp.o
-
-.PHONY : pcm/MacMSRDriver/MSRAccessor.o
-
-# target to build an object file
-pcm/MacMSRDriver/MSRAccessor.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/MSRAccessor.cpp.o
-.PHONY : pcm/MacMSRDriver/MSRAccessor.cpp.o
-
-pcm/MacMSRDriver/MSRAccessor.i: pcm/MacMSRDriver/MSRAccessor.cpp.i
-
-.PHONY : pcm/MacMSRDriver/MSRAccessor.i
-
-# target to preprocess a source file
-pcm/MacMSRDriver/MSRAccessor.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/MSRAccessor.cpp.i
-.PHONY : pcm/MacMSRDriver/MSRAccessor.cpp.i
-
-pcm/MacMSRDriver/MSRAccessor.s: pcm/MacMSRDriver/MSRAccessor.cpp.s
-
-.PHONY : pcm/MacMSRDriver/MSRAccessor.s
-
-# target to generate assembly for a file
-pcm/MacMSRDriver/MSRAccessor.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/MSRAccessor.cpp.s
-.PHONY : pcm/MacMSRDriver/MSRAccessor.cpp.s
-
-pcm/MacMSRDriver/PCIDriverInterface.o: pcm/MacMSRDriver/PCIDriverInterface.cpp.o
-
-.PHONY : pcm/MacMSRDriver/PCIDriverInterface.o
-
-# target to build an object file
-pcm/MacMSRDriver/PCIDriverInterface.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/PCIDriverInterface.cpp.o
-.PHONY : pcm/MacMSRDriver/PCIDriverInterface.cpp.o
-
-pcm/MacMSRDriver/PCIDriverInterface.i: pcm/MacMSRDriver/PCIDriverInterface.cpp.i
-
-.PHONY : pcm/MacMSRDriver/PCIDriverInterface.i
-
-# target to preprocess a source file
-pcm/MacMSRDriver/PCIDriverInterface.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/PCIDriverInterface.cpp.i
-.PHONY : pcm/MacMSRDriver/PCIDriverInterface.cpp.i
-
-pcm/MacMSRDriver/PCIDriverInterface.s: pcm/MacMSRDriver/PCIDriverInterface.cpp.s
-
-.PHONY : pcm/MacMSRDriver/PCIDriverInterface.s
-
-# target to generate assembly for a file
-pcm/MacMSRDriver/PCIDriverInterface.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/MacMSRDriver/PCIDriverInterface.cpp.s
-.PHONY : pcm/MacMSRDriver/PCIDriverInterface.cpp.s
 
 pcm/client_bw.o: pcm/client_bw.cpp.o
 
@@ -215,7 +134,7 @@ pcm/client_bw.o: pcm/client_bw.cpp.o
 
 # target to build an object file
 pcm/client_bw.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/client_bw.cpp.o
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/client_bw.cpp.o
 .PHONY : pcm/client_bw.cpp.o
 
 pcm/client_bw.i: pcm/client_bw.cpp.i
@@ -224,7 +143,7 @@ pcm/client_bw.i: pcm/client_bw.cpp.i
 
 # target to preprocess a source file
 pcm/client_bw.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/client_bw.cpp.i
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/client_bw.cpp.i
 .PHONY : pcm/client_bw.cpp.i
 
 pcm/client_bw.s: pcm/client_bw.cpp.s
@@ -233,7 +152,7 @@ pcm/client_bw.s: pcm/client_bw.cpp.s
 
 # target to generate assembly for a file
 pcm/client_bw.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/client_bw.cpp.s
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/client_bw.cpp.s
 .PHONY : pcm/client_bw.cpp.s
 
 pcm/cpucounters.o: pcm/cpucounters.cpp.o
@@ -242,7 +161,7 @@ pcm/cpucounters.o: pcm/cpucounters.cpp.o
 
 # target to build an object file
 pcm/cpucounters.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/cpucounters.cpp.o
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/cpucounters.cpp.o
 .PHONY : pcm/cpucounters.cpp.o
 
 pcm/cpucounters.i: pcm/cpucounters.cpp.i
@@ -251,7 +170,7 @@ pcm/cpucounters.i: pcm/cpucounters.cpp.i
 
 # target to preprocess a source file
 pcm/cpucounters.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/cpucounters.cpp.i
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/cpucounters.cpp.i
 .PHONY : pcm/cpucounters.cpp.i
 
 pcm/cpucounters.s: pcm/cpucounters.cpp.s
@@ -260,7 +179,7 @@ pcm/cpucounters.s: pcm/cpucounters.cpp.s
 
 # target to generate assembly for a file
 pcm/cpucounters.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/cpucounters.cpp.s
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/cpucounters.cpp.s
 .PHONY : pcm/cpucounters.cpp.s
 
 pcm/msr.o: pcm/msr.cpp.o
@@ -269,7 +188,7 @@ pcm/msr.o: pcm/msr.cpp.o
 
 # target to build an object file
 pcm/msr.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/msr.cpp.o
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/msr.cpp.o
 .PHONY : pcm/msr.cpp.o
 
 pcm/msr.i: pcm/msr.cpp.i
@@ -278,7 +197,7 @@ pcm/msr.i: pcm/msr.cpp.i
 
 # target to preprocess a source file
 pcm/msr.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/msr.cpp.i
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/msr.cpp.i
 .PHONY : pcm/msr.cpp.i
 
 pcm/msr.s: pcm/msr.cpp.s
@@ -287,7 +206,7 @@ pcm/msr.s: pcm/msr.cpp.s
 
 # target to generate assembly for a file
 pcm/msr.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/msr.cpp.s
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/msr.cpp.s
 .PHONY : pcm/msr.cpp.s
 
 pcm/pci.o: pcm/pci.cpp.o
@@ -296,7 +215,7 @@ pcm/pci.o: pcm/pci.cpp.o
 
 # target to build an object file
 pcm/pci.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/pci.cpp.o
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/pci.cpp.o
 .PHONY : pcm/pci.cpp.o
 
 pcm/pci.i: pcm/pci.cpp.i
@@ -305,7 +224,7 @@ pcm/pci.i: pcm/pci.cpp.i
 
 # target to preprocess a source file
 pcm/pci.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/pci.cpp.i
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/pci.cpp.i
 .PHONY : pcm/pci.cpp.i
 
 pcm/pci.s: pcm/pci.cpp.s
@@ -314,7 +233,7 @@ pcm/pci.s: pcm/pci.cpp.s
 
 # target to generate assembly for a file
 pcm/pci.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/pci.cpp.s
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/pci.cpp.s
 .PHONY : pcm/pci.cpp.s
 
 pcm/utils.o: pcm/utils.cpp.o
@@ -323,7 +242,7 @@ pcm/utils.o: pcm/utils.cpp.o
 
 # target to build an object file
 pcm/utils.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/utils.cpp.o
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/utils.cpp.o
 .PHONY : pcm/utils.cpp.o
 
 pcm/utils.i: pcm/utils.cpp.i
@@ -332,7 +251,7 @@ pcm/utils.i: pcm/utils.cpp.i
 
 # target to preprocess a source file
 pcm/utils.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/utils.cpp.i
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/utils.cpp.i
 .PHONY : pcm/utils.cpp.i
 
 pcm/utils.s: pcm/utils.cpp.s
@@ -341,7 +260,7 @@ pcm/utils.s: pcm/utils.cpp.s
 
 # target to generate assembly for a file
 pcm/utils.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/utils.cpp.s
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/pcm/utils.cpp.s
 .PHONY : pcm/utils.cpp.s
 
 perf/perf.o: perf/perf.cpp.o
@@ -350,7 +269,7 @@ perf/perf.o: perf/perf.cpp.o
 
 # target to build an object file
 perf/perf.cpp.o:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/perf/perf.cpp.o
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/perf/perf.cpp.o
 .PHONY : perf/perf.cpp.o
 
 perf/perf.i: perf/perf.cpp.i
@@ -359,7 +278,7 @@ perf/perf.i: perf/perf.cpp.i
 
 # target to preprocess a source file
 perf/perf.cpp.i:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/perf/perf.cpp.i
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/perf/perf.cpp.i
 .PHONY : perf/perf.cpp.i
 
 perf/perf.s: perf/perf.cpp.s
@@ -368,7 +287,7 @@ perf/perf.s: perf/perf.cpp.s
 
 # target to generate assembly for a file
 perf/perf.cpp.s:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/perf/perf.cpp.s
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(MAKE) -f lib/CMakeFiles/pcm.dir/build.make lib/CMakeFiles/pcm.dir/perf/perf.cpp.s
 .PHONY : perf/perf.cpp.s
 
 # Help Target
@@ -380,15 +299,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... pcm"
-	@echo "... pcm/MacMSRDriver/DriverInterface.o"
-	@echo "... pcm/MacMSRDriver/DriverInterface.i"
-	@echo "... pcm/MacMSRDriver/DriverInterface.s"
-	@echo "... pcm/MacMSRDriver/MSRAccessor.o"
-	@echo "... pcm/MacMSRDriver/MSRAccessor.i"
-	@echo "... pcm/MacMSRDriver/MSRAccessor.s"
-	@echo "... pcm/MacMSRDriver/PCIDriverInterface.o"
-	@echo "... pcm/MacMSRDriver/PCIDriverInterface.i"
-	@echo "... pcm/MacMSRDriver/PCIDriverInterface.s"
 	@echo "... pcm/client_bw.o"
 	@echo "... pcm/client_bw.i"
 	@echo "... pcm/client_bw.s"
@@ -418,6 +328,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,6 +1,6 @@
 #ifndef MICROBENCHMARK_H
 #define MICROBENCHMARK_H
-#define MAX_ITER 1000
+#define MAX_ITER 10000
 
 typedef enum {
     MUL_LATENCY,
@@ -24,9 +24,13 @@ throughput_t  microbenchmark_get_mul_throughput ();
 double        microbenchmark_get_div_latency    ();
 throughput_t  microbenchmark_get_div_throughput ();
 
-void sp_mul();
-void sp_div();
-void dp_mul();
-void dp_div();
+int sp_mul_latency();
+int sp_div_latency();
+int dp_mul_latency();
+int dp_div_latency();
+int sp_mul_tps();
+int sp_div_tps();
+int dp_mul_tps();
+int dp_div_tps();
 
 #endif /* MICROBENCHMARK_H */
