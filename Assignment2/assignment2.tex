@@ -4,7 +4,6 @@
 \usepackage[pdftex]{color}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
-\usepackage{minted}
 
 % Simplifies margin settings
 \usepackage{geometry}
@@ -39,12 +38,56 @@
 \begin{center}
 \Large \bf 263-2300-00: How To Write Fast Numerical Code
 
-\Large \bf Assignment 1: 100 points
+\Large \bf Assignment 2: 80 points
 
 \large Submitted by Jinank Jain
 \end{center}
 
+\textbf{Solution 1}\\ \\
+\bigskip
+
+\textbf{Solution 2}\\ \\
+\textbf{Part b:} \\
+In this part I tried four different variations which are discussed as below:
+\begin{itemize}
+	\item In the first approach I just unroll the inner loop and does not do any modifications with that unrolled loop. The function is called \texttt{loop\_unroll} in C file.
+	\item In the second approach, I did some optimization with unrolled loop that I did in the previous section, I replaced $x[i]$ with some some scalar $a$ which stores the value of $x[i]$ in some register. Another optimization was to much multiple accumulator instead single sum. I used for different sum variable to store the intermediate result. The function is called \texttt{scalar\_replacement} in C file.
+	\item In the third approach I unrolled the first loop too. Since in the array y there are only 5 values and I want them to be stored in registers so I unrolled first loop in multiple of 5 and storing all the values in the register. And creating 20 different sum accumulator and summing up the final answer. The function is called \texttt{super\_scalar\_replacement} in C file.
+	\item In the fourth approach I remove the assumption which I took in third approach that $n$ was divisible by 5 so for that I need introduce some branching instructions. The function is called \texttt{super\_scalar\_replacement\_generalize} in C file.
+\end{itemize}
+
+\textbf{Part d:} \\
+\begin{table}[h!]
+\centering
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Optimization\\ Flags\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}slow\\ performance1\end{tabular}} & \textbf{loop\_unroll} & \textbf{\begin{tabular}[c]{@{}l@{}}scalar\\ \_replacement\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}super\\ \_scalar\\ \_replacement\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}super\_scalar\\ \_replacement\\ \_generalize\end{tabular}} \\ \hline
+-O0                                                                   & 0.164 FLOPs/c                                                        & 0.238 FLOPs/c         & 0.233 FLOPs/c                                                           & 0.817 FLOPs/c                                                                     & 0.738 FLOPs/c                                                                                 \\ \hline
+-O3                                                                   & 0.537 FLOPs/c                                                        & 0.549 FLOPs/c         & 0.544 FLOPs/c                                                           & 4.881 FLOPs/c                                                                     & 3.527 FLOPs/c                                                                                 \\ \hline
+\end{tabular}
+\caption{Performance comparison between different optimization function}
+\end{table}
+
+\bigskip
+
 \textbf{Solution 3}\\ \\
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Instruction} & \multicolumn{3}{c|}{\textbf{Reference Values}} & \multicolumn{3}{c|}{\textbf{Regular Case}} & \multicolumn{3}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Special Case:\\ Mul: 1\end{tabular}}} & \multicolumn{3}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Special Case:\\ Div: 2\end{tabular}}} \\ \hline
+ & \textbf{Latency} & \textbf{TPS} & \textbf{Gap} & \textbf{Latency} & \textbf{TPS} & \textbf{Gap} & \textbf{Latency} & \textbf{TPS} & \textbf{Gap} & \textbf{Latency} & \textbf{TPS} & \textbf{Gap} \\ \hline
+\textbf{MULSS} & 5 & 1 & 1 & 5.34 & 0.76 & 1.32 &  &  &  &  &  &  \\ \hline
+\textbf{MULSD} & 5 & 1 & 1 & 5.06 & 0.91 & 1.09 &  &  &  &  &  &  \\ \hline
+\textbf{DIVSS} & 11-14 & 0.16 & 6 & 13.07 & 0.13 & 7.49 &  &  &  &  &  &  \\ \hline
+\textbf{DIVSD} & 15-20 & 0.07 & 14 & 20.06 & 0.07 & 14.06 &  &  &  &  &  &  \\ \hline
+\end{tabular}
+\end{table}
+
 \bigskip
 
 \clearpage

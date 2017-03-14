@@ -6,21 +6,67 @@
 
 #IncludeRegexTransform: 
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/include/perf.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/include/perf.h
 stdint.h
 -
 pcm_Export.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/include/pcm_Export.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/include/pcm_Export.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCM_Win/windriver.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/DriverInterface.h
+stdint.h
+-
+stdio.h
+-
+stdlib.h
+-
+IOKit/IOKitLib.h
+-
+PcmMsr/UserKernelShared.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/PcmMsr/UserKernelShared.h
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/MSRAccessor.cpp
+MSRAccessor.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/MSRAccessor.h
+exception
+-
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/MSRAccessor.h
+IOKit/IOKitLib.h
+-
+DriverInterface.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/DriverInterface.h
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/PCIDriverInterface.cpp
+stdio.h
+-
+map
+-
+PCIDriverInterface.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/PCIDriverInterface.h
+IOKit/IOKitLib.h
+-
+PcmMsr/UserKernelShared.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/PcmMsr/UserKernelShared.h
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/PCIDriverInterface.h
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/MacMSRDriver/PcmMsr/UserKernelShared.h
+stdint.h
+-
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCM_Win/windriver.h
 iostream
 -
 comdef.h
 -
 cpucounters.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCM_Win/cpucounters.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCM_Win/cpucounters.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.cpp
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Winmsrdriver/win7/msrstruct.h
+WinIoCtl.h
+-
+
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.cpp
 iostream
 -
 string.h
@@ -32,9 +78,9 @@ sys/stat.h
 fcntl.h
 -
 pci.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
 client_bw.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
 sys/mman.h
 -
 errno.h
@@ -42,37 +88,37 @@ errno.h
 windows.h
 -
 PCIDriverInterface.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCIDriverInterface.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCIDriverInterface.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
 types.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 windows.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/windows.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/windows.h
 winpmem/winpmem.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/winpmem.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/winpmem.h
 unistd.h
 -
 mutex.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
 memory
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.cpp
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.cpp
 stdio.h
 -
 Intelpcm.dll/Intelpcm.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Intelpcm.dll/Intelpcm.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Intelpcm.dll/Intelpcm.h
 cpucounters.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
 msr.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
 pci.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
 types.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 utils.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
 intrin.h
 -
 windows.h
@@ -82,9 +128,9 @@ comdef.h
 tchar.h
 -
 winring0/OlsApiInit.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInit.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInit.h
 PCM_Win/windriver.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCM_Win/windriver.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCM_Win/windriver.h
 pthread.h
 -
 errno.h
@@ -122,17 +168,17 @@ sys/cpuctl.h
 machine/cpufunc.h
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
 types.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 msr.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
 pci.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
 client_bw.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
 width_extender.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/width_extender.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/width_extender.h
 vector
 -
 limits
@@ -160,7 +206,7 @@ fcntl.h
 unistd.h
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.cpp
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.cpp
 sys/types.h
 -
 stdio.h
@@ -174,37 +220,37 @@ fcntl.h
 unistd.h
 -
 types.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 msr.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
 assert.h
 -
 windows.h
 -
 utils.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
 Winmsrdriver/win7/msrstruct.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Winmsrdriver/win7/msrstruct.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Winmsrdriver/win7/msrstruct.h
 winring0/OlsApiInitExt.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitExt.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitExt.h
 sys/ioccom.h
 -
 sys/cpuctl.h
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/msr.h
 types.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 windows.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/windows.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/windows.h
 MSRAccessor.h
 -
 mutex.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
 memory
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
 windows.h
 -
 pthread.h
@@ -212,7 +258,7 @@ pthread.h
 stdlib.h
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.cpp
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.cpp
 iostream
 -
 stdio.h
@@ -224,7 +270,7 @@ sys/stat.h
 fcntl.h
 -
 pci.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
 sys/mman.h
 -
 errno.h
@@ -232,27 +278,27 @@ errno.h
 windows.h
 -
 Winmsrdriver/win7/msrstruct.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Winmsrdriver/win7/msrstruct.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/Winmsrdriver/win7/msrstruct.h
 winring0/OlsDef.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsDef.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsDef.h
 winring0/OlsApiInitExt.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitExt.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitExt.h
 sys/pciio.h
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/pci.h
 types.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 windows.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/windows.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/windows.h
 unistd.h
 -
 PCIDriverInterface.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCIDriverInterface.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/PCIDriverInterface.h
 vector
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/types.h
 iostream
 -
 istream
@@ -264,7 +310,7 @@ iomanip
 windows.h
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.cpp
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.cpp
 iostream
 -
 cassert
@@ -278,9 +324,9 @@ comdef.h
 sys/wait.h
 -
 utils.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/utils.h
 cstdio
 -
 cstring
@@ -288,7 +334,7 @@ cstring
 fstream
 -
 cpucounters.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
 csignal
 -
 ctime
@@ -296,7 +342,7 @@ ctime
 cmath
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/width_extender.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/width_extender.h
 windows.h
 -
 pthread.h
@@ -304,39 +350,39 @@ pthread.h
 stdlib.h
 -
 cpucounters.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
 client_bw.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/client_bw.h
 mutex.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/mutex.h
 memory
 -
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/winpmem.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/winpmem.h
 windows.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/windows.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/windows.h
 stdio.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/stdio.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/stdio.h
 tchar.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/tchar.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winpmem/tchar.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInit.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInit.h
 OlsDef.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsDef.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsDef.h
 OlsApiInitDef.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitDef.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitDef.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitDef.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitDef.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitExt.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitExt.h
 OlsApiInitDef.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitDef.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsApiInitDef.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsDef.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/winring0/OlsDef.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/perf/asm.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/perf/asm.h
 
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/perf/perf.cpp
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/perf/perf.cpp
 windows.h
 -
 unistd.h
@@ -350,11 +396,35 @@ iostream
 string
 -
 ../../include/perf.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/include/perf.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/include/perf.h
 ../pcm/cpucounters.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/pcm/cpucounters.h
 asm.h
-/home/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/perf/asm.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment2/microbenchmark/lib/perf/asm.h
+
+lib/pcm/MacMSRDriver/DriverInterface.h
+stdint.h
+-
+stdio.h
+-
+stdlib.h
+-
+IOKit/IOKitLib.h
+-
+PcmMsr/UserKernelShared.h
+lib/pcm/MacMSRDriver/PcmMsr/UserKernelShared.h
+
+lib/pcm/MacMSRDriver/MSRAccessor.h
+IOKit/IOKitLib.h
+-
+DriverInterface.h
+lib/pcm/MacMSRDriver/DriverInterface.h
+
+lib/pcm/MacMSRDriver/PCIDriverInterface.h
+
+lib/pcm/MacMSRDriver/PcmMsr/UserKernelShared.h
+stdint.h
+-
 
 lib/pcm_Export.h
 

@@ -1,12 +1,16 @@
 #include "microbenchmark.h"
 #include "perf.h"
-#define SPECIAL 1
 
-int (*benchmark_func)();
-int ans;
+double (*benchmark_func)();
+double ans;
+double SPECIAL_MUL_DOUBLE;
+double SPECIAL_DIV_DOUBLE;
 
 void microbenchmark_mode (microbenchmark_mode_t mode)
 {
+    SPECIAL_DIV_DOUBLE = 2.0;
+    uint64_t x = 0x0000000000000001;
+    SPECIAL_MUL_DOUBLE = *((double*)&x);
     switch (mode) {
         case MUL_LATENCY:
         	benchmark_func = sp_mul_latency;
@@ -36,33 +40,24 @@ void microbenchmark_mode (microbenchmark_mode_t mode)
     }
 }
 
-int sp_mul_latency() {
-    float a = 2.1;
-    float b;
-    if(SPECIAL)
-        b = 1;
-    else
-        b = 0.9999;
+double sp_mul_latency() {
+    double a = 2.1;
+    double b = 0.9999;
     int i = 0;
     for(i=0; i<MAX_ITER; i++) {
         a = a*b;
     }
-    return (int ) a;
-    //printf("%f\n", a);
+    return a;
 }
 
-int sp_mul_tps() {
+double sp_mul_tps() {
 	// printf("Hell\n");
-	float a = 2.1;
-    float b;
-    float c = 2.3;
-    float d = 2.7;
-    float e = 2.5;
-    float f = 2.8;
-    if(SPECIAL)
-        b = 1;
-    else
-        b = 0.9999;
+	double a = 2.1;
+    double b = 0.9999;
+    double c = 2.3;
+    double d = 2.7;
+    double e = 2.5;
+    double f = 2.8;
     int i = 0;
     for(i=0; i<MAX_ITER; i+=5) {
         a = a*b;
@@ -71,113 +66,90 @@ int sp_mul_tps() {
         e = e*b;
         f = f*b;
     }
-    return (int ) (a+c+d+e+f);
+    return (a+c+d+e+f);
 }
 
-int sp_div_latency() {
-    float a = 1.99;
-    float b;
-    if(SPECIAL)
-        b = 2.0;
-    else
-        b = 0.9999;
+double sp_div_latency() {
+    double a = 0.9999;
+    double b = 1.99;
     int i = 0;
     for(i=0; i<MAX_ITER; i++) {
-        a = a/b;
+        b = b/a;
     }
-    return (int) a;
+    return b;
 }
 
-int sp_div_tps() {
-    float a = 1.99;
-    float c = 1.98;
-    float b;
-    if(SPECIAL)
-        b = 2.0;
-    else
-        b = 0.9999;
+double sp_div_tps() {
+    double a = 1.99;
+    double c = 1.98;
+    double b = 0.9999;
     int i = 0;
     for(i=0; i<MAX_ITER; i+=2) {
         a = a/b;
         c = c/b;
     }
-    return (int) (a+c);
+    return (a+c);
 }
 
-int dp_mul_latency() {
-    double a = 2.1;
-    double b;
-    if(SPECIAL)
-        b = 0x0000000000000001;
-    else
-    	b = 0.9999;
+double dp_mul_latency() {
+    double a = 1.1;
+    double b = SPECIAL_MUL_DOUBLE;
     int i = 0;
     for(i=0; i<MAX_ITER; i++) {
-       	a *= b;
+       	b = b*a;
     }
-    return (int) a;
+    return  b;
 }
 
-int dp_mul_tps() {
-    double a = 2.1;
-    double c = 2.4;
-    double d = 2.2;
-    double e = 2.5;
-    double f = 2.7;
-    double g = 2.6;
-    double h = 2.8;
-    double q = 2.9;
-    double j = 3.1;
-    double p = 3.2;
-    double b;
-    if(SPECIAL)
-        b = 0x0000000000000001;
-    else
-    	b = 0.9999;
+double dp_mul_tps() {
+    double a = 1.1;
+    double c = 1.4;
+    double d = 1.2;
+    double e = 1.5;
+    double f = 1.7;
+    double g = 1.6;
+    double b = SPECIAL_MUL_DOUBLE;
+    double b1 = SPECIAL_MUL_DOUBLE;
+    double b2 = SPECIAL_MUL_DOUBLE;
+    double b3 = SPECIAL_MUL_DOUBLE;
+    double b4 = SPECIAL_MUL_DOUBLE;
+    double b5 = SPECIAL_MUL_DOUBLE;
+
     int i = 0;
-    for(i=0; i<MAX_ITER; i+=10) {
-       	a *= b;
-       	c *= b;
-       	d *= b;
-       	e *= b;
-       	f *= b;
-       	g *= b;
-       	h *= b;
-       	q *= b;
-       	j *= b;
-       	p *= b;
+    for(i=0; i<MAX_ITER; i+=6) {
+       	b *= a;
+       	b1 *= c;
+       	b2 *= d;
+       	b3 *= e;
+       	b4 *= f;
+       	b5 *= g;
+
     }
-    return (int) (a+c+d+e+f+g+h+q+j+p);
+    return (b + b1 + b2 + b3 + b4 + b5);
 }
 
-int dp_div_latency() {
-    double a = 2.2;
-    double b;
-    if(SPECIAL)
-        b = 2.0;
-    else
-        b = 0.9999;
+double dp_div_latency() {
+    double a = SPECIAL_DIV_DOUBLE;
+    double b = 1e302;
+
     int i = 0;
     for(i=0; i<MAX_ITER; i++) {
-        a = a/b;
+        b = b/a;
     }
-    return (int) a;
+    return b;
 }
 
-int dp_div_tps() {
-    double a = 2.2;
-    double c = 2.4;
-    double b;
-    if(SPECIAL)
-        b = 2.0;
-    else
-        b = 0.9999;
+double dp_div_tps() {
+    double a = 1e202;
+    double c = 1e201;
+    double b = SPECIAL_DIV_DOUBLE;
+
     int i = 0;
     for(i=0; i<MAX_ITER; i+=2) {
         a = a/b;
         c = c/b;
     }
-    return (int) (a+c);
+    return (a+c);
 }
 
 double microbenchmark_get_mul_latency()
@@ -186,6 +158,7 @@ double microbenchmark_get_mul_latency()
     // Your benchmark goes here
     ans = benchmark_func();
     double cycles = cycles_count_stop ();
+    printf("Latency MUL %g\n", ans);
     cycles = cycles/MAX_ITER;
     return cycles;
 }
@@ -196,6 +169,7 @@ throughput_t microbenchmark_get_mul_throughput ()
     // Your benchmark goes here
     ans = benchmark_func();
     double cycles = cycles_count_stop ();
+    printf("TPS MUL %g\n", ans);
     cycles = cycles/MAX_ITER;
     throughput_t result;
     result.gap        = (double)cycles;
@@ -209,6 +183,7 @@ double microbenchmark_get_div_latency()
     // Your benchmark goes here
     ans = benchmark_func();
     double cycles = cycles_count_stop ();
+    printf("Latency DIV %g\n", ans);
     cycles = cycles/MAX_ITER;
     return cycles;
 }
@@ -219,6 +194,7 @@ throughput_t microbenchmark_get_div_throughput ()
     // Your benchmark goes here
     ans = benchmark_func();
     double cycles = cycles_count_stop ();
+    printf("TPS DIV %g\n", ans);
     cycles = cycles/MAX_ITER;
     throughput_t result;
     result.gap        = (double)cycles;

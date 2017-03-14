@@ -1,1 +1,1 @@
-/usr/bin/c++   -O3 -std=c++11   CMakeFiles/IntelPCM.dir/src/microbenchmark.c.o CMakeFiles/IntelPCM.dir/src/main.c.o  -o bin/IntelPCM -rdynamic bin/libpcm.a -lrt -lpthread 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -O3 -std=c++11 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/IntelPCM.dir/src/microbenchmark.c.o CMakeFiles/IntelPCM.dir/src/main.c.o  -o bin/IntelPCM  bin/libpcm.a -framework IOKit 
