@@ -76,12 +76,12 @@ endif()
 if (CMAKE_C_COMPILER_ID MATCHES "Clang")
 
     # clang - CC flags
-    set(CMAKE_C_FLAGS "-O3 -fno-tree-vectorize -ffast-math -funsafe-math-optimizations")
+    set(CMAKE_C_FLAGS "-O3 -fno-tree-vectorize -mno-sse4 -mno-sse3 -ffast-math -funsafe-math-optimizations")
 
 elseif ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
 
     # GNU GCC - CC flags
-    set(CMAKE_C_FLAGS "-O3 -fno-tree-vectorize -ffast-math -funsafe-math-optimizations")
+    set(CMAKE_C_FLAGS "-O3 -fno-tree-vectorize -mno-sse4 -mno-sse3 -ffast-math -funsafe-math-optimizations")
 
 elseif ("${CMAKE_C_COMPILER_ID}" STREQUAL "Intel")
 

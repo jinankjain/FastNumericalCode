@@ -39,7 +39,7 @@ BIN = perftest
 #CFLAGS += -O3 -no-vec
 
 CC      = g++
-CFLAGS += -O0 -fno-tree-vectorize -mno-sse4
+CFLAGS += -O0 -fno-tree-vectorize -mno-sse3 -mno-sse4 -fno-slp-vectorize
 
 # ==================================================================================== #
 # = Object Files
