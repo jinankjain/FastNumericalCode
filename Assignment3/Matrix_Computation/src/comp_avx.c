@@ -42,9 +42,9 @@ void comp_avx(double *C , double *A , double *B , int n){
 				__m256d a3 = _mm256_load_pd(A+(n*(k+1)+j));
 				__m256d a4 = _mm256_load_pd(A+(n*(k+2)+j));
 				__m256d a5 = _mm256_load_pd(A+(n*(k+3)+j));
-				__m256d a6 = _mm256_shuffle_pd(a2, a3, _MM_SHUFFLE(1,0,2,0));
-				__m256d a7 = _mm256_shuffle_pd(a4, a5, _MM_SHUFFLE(1,0,2,0));
-				__m256d a8 = _mm256_shuffle_pd(a6, a7, _MM_SHUFFLE(2,0,2,0));
+				__m256d a6 = _mm256_shuffle_pd(a2, a4, 0);
+				__m256d a7 = _mm256_shuffle_pd(a3, a5, 0);
+				__m256d a8 = _mm256_shuffle_pd(a6, a7, 0);
 
 				// Load all the required B
 				__m256d b1 = _mm256_load_pd(B+(n*i+k));
@@ -52,9 +52,9 @@ void comp_avx(double *C , double *A , double *B , int n){
 				__m256d b3 = _mm256_load_pd(B+n*(k+1)+j);
 				__m256d b4 = _mm256_load_pd(B+n*(k+2)+j);
 				__m256d b5 = _mm256_load_pd(B+n*(k+3)+j);
-				__m256d b6 = _mm256_shuffle_pd(b2, b3, _MM_SHUFFLE(1,0,2,0));
-				__m256d b7 = _mm256_shuffle_pd(b4, b5, _MM_SHUFFLE(1,0,2,0));
-				__m256d b8 = _mm256_shuffle_pd(b6, b7, _MM_SHUFFLE(2,0,2,0));
+				__m256d b6 = _mm256_shuffle_pd(b2, b4,  0);
+				__m256d b7 = _mm256_shuffle_pd(b3, b5,  0);
+				__m256d b8 = _mm256_shuffle_pd(b6, b7,  0);
 
 				// Get mul results
 				__m256d res1 = _mm256_mul_pd(a1, b8);

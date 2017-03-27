@@ -16,12 +16,13 @@
 
 // Procedure mvm10: Serial code (do not need to modify)
 
-void mvm10(float const * A, float const * x, float * y) {
+void vec_mvm10(float const * A, float const * x, float * y) {
   for(int i = 0; i < 10; i++) {
       float t = 0.f;
       __m256 res = _mm256_setzero_ps();
-      __m256 x = _mm256_load_ps(x);
-      
+      __m256 x1 = _mm256_load_ps(x);
+      __m128 res1 = _mm_setzero_ps();
+      __m128 x2 = _mm_load_ps(x+8);
       for(int j = 0; j < 10; j++)
         t += A[i*10+j]*x[j];
       y[i] = t;
@@ -33,11 +34,10 @@ void mvm10(float const * A, float const * x, float * y) {
 // Procedure vec_mvm10: vector code
 // Implement WITHOUT unaligned instructions
  
-void vec_mvm10(float const * A, float const * x, float * y) {
+void mvm10(float const * A, float const * x, float * y) {
 	//your code comes in here	
 	for (int i = 0; i < 10; i++) {
 		float t = 0.f;
-
 		for (int j = 0; j < 10; j++)
 			t += A[i * 10 + j] * x[j];
 		y[i] = t;
@@ -123,9 +123,9 @@ void test_vec_mvm10(float const * A, float const * x, float * y)
 
 int main()
 {
-  float * A = (float *) _mm_malloc(sizeof(float)*10*10, 16);
-  float * x = (float *) _mm_malloc(sizeof(float)*10, 16);
-  float * y = (float *) _mm_malloc(sizeof(float)*10, 16);
+  float * A = (float *) _mm_malloc(sizeof(float)*10*10, 32);
+  float * x = (float *) _mm_malloc(sizeof(float)*10, 32);
+  float * y = (float *) _mm_malloc(sizeof(float)*10, 32);
 
   setrandom(A, 10, 10);
   setrandom(x, 10, 1);
