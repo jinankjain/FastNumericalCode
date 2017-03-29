@@ -19,25 +19,27 @@
 void vec_mvm10(float const * A, float const * x, float * y) {
   __m256 zero = _mm256_setzero_ps();
   __m256 x1_1 = _mm256_load_ps(x);
-  __m256i mask = _mm256_set_epi32(1,1,0,0,0,0,1,1);
-  __m256i store_mask = _mm256_set_epi32(0,0,0,0,0,0,0,1);
-  __m256 x1_2 = _mm256_maskload_ps(x+8, mask);
+  __m256i mask1 = _mm256_set_epi32(0,0,0,0,0,0,0xFFFFFFFF,0xFFFFFFFF);
+  __m256i store_mask = _mm256_set_epi32(0,0,0,0,0,0,0,0xFFFFFFFF);
+  __m256 x1_2 = _mm256_maskload_ps(x+8, mask1);
 
   for(int i = 0; i < 10; i++) {
       __m256 res1_1 = _mm256_setzero_ps();
       __m256 res1_2 = _mm256_setzero_ps();
 
       __m256 A1_1 = _mm256_load_ps(A+10*i);
-      __m256 A1_2 = _mm256_maskload_ps(A+10*i+8, mask);
+      __m256 A1_2 = _mm256_maskload_ps(A+10*i+8, mask1);
 
       res1_1 = _mm256_mul_ps(x1_1, A1_1);
       res1_2 = _mm256_mul_ps(x1_2, A1_2);
-      printf("Test x %f %f %f\n", x1_2[0], x1_2[1], x1_2[2]);
+      
       __m256 res1_3 = _mm256_hadd_ps(res1_1, res1_2);
+  
       res1_3 = _mm256_hadd_ps(res1_3, zero);
       res1_3 = _mm256_hadd_ps(res1_3, zero);
-      res1_3 = _mm256_hadd_ps(res1_3, zero);
-      _mm256_maskstore_ps(y+i, store_mask, res1_3);
+      float tmp[8];
+      _mm256_store_ps(tmp, res1_3);
+      y[i] = tmp[0]+tmp[4];
   }
 }
 
@@ -62,7 +64,7 @@ void mvm10(float const * A, float const * x, float * y) {
  * Do not need to modify from here on
  */
 
-#define RUNS     1
+#define RUNS     400
 #define CYCLES_REQUIRED 1e7
 
 void verify(float const * A, float const * x, float const * y)
@@ -76,7 +78,7 @@ void verify(float const * A, float const * x, float const * y)
       double err = fabs(y[i] - temp[i]);
       if(err > 1E-5)
         {
-          printf("Error at y[%d]\n", i);
+          printf("Error at y[%d] %g\n", i, temp[i]);
         }
   }
 
