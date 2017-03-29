@@ -10,7 +10,7 @@
  *  Copyright (C) 2017  Alen Stojanov   (astojanov@inf.ethz.ch)
  *                      Gagandeep Singh (gsingh@inf.ethz.ch)
  *                      Georg Ofenbeck  (ofenbeck@inf.ethz.ch)
- *	                Markus Pueschel (pueschel@inf.ethz.ch)
+ *	                	Markus Pueschel (pueschel@inf.ethz.ch)
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -28,40 +28,69 @@
 
 #include "comp.h"
 #include "emmintrin.h"
+#include "pmmintrin.h"
 
 // write the SSE version here, try to optimize it as much as possible
 void comp_sse(double *C , double *A , double *B , int n){
 	int i,j,k;
-	for(i=0; i < n; i++){
-		for(j=0; j < n; j++){
-			__m128d sum =  _mm_setzero_pd();
+	__m128d tmp1, tmp2, tmp3, tmp4;
+	__m128d zero =  _mm_setzero_pd();
+
+	for(i=0; i < n; i+=2){
+		for(j=0; j < n; j+=2){
+			__m128d sum1 =  _mm_setzero_pd();
+			__m128d sum2 =  _mm_setzero_pd();
+			__m128d sum3 =  _mm_setzero_pd();
+			__m128d sum4 =  _mm_setzero_pd();
 			for(k=0; k < n; k+=2){
-				
-				// Load all the required A
+				// Load 2 rows of A
 				__m128d a1 = _mm_load_pd(A+(n*i+k));
-				__m128d a2 = _mm_load_sd(A+(n*k+j));
-				__m128d a3 = _mm_load_sd(A+(n*(k+1)+j));
-				__m128d a4 = _mm_shuffle_pd(a2, a3, 0);
+				__m128d a4 = _mm_load_pd(A+(n*(i+1)+k));
 
-				// Load all the required B
+				// Load 2 rows of B
 				__m128d b1 = _mm_load_pd(B+(n*i+k));
-				__m128d b2 = _mm_load_sd(B+(n*k+j));
-				__m128d b3 = _mm_load_sd(B+n*(k+1)+j);
-				__m128d b4 = _mm_shuffle_pd(b2, b3, 0);
+				__m128d b4 = _mm_load_pd(B+(n*(i+1)+k));
+				
+				// Load 2 cols of B
+				__m128d b2 = _mm_load_pd(B+(n*k+j));
+				__m128d b3 = _mm_load_pd(B+n*(k+1)+j);
+				tmp1 = _mm_unpacklo_pd(b2, b3);
+				tmp2 = _mm_unpackhi_pd(b2, b3);
 
-				// Get mul results
-				__m128d res1 = _mm_mul_pd(a1, b4);
-				__m128d res2 = _mm_mul_pd(a4, b1);
+				// Load 2 cols of A
+				__m128d a2 = _mm_load_pd(A+(n*k+j));
+				__m128d a3 = _mm_load_pd(A+(n*(k+1)+j));
+				tmp3 = _mm_unpacklo_pd(a2, a3);
+				tmp4 = _mm_unpackhi_pd(a2, a3);
 
-				// Calculate min
-				__m128d res3 = _mm_min_pd (res1, res2);
-				sum = _mm_add_pd (sum, res3);
+				__m128d res1 = _mm_mul_pd(a1, tmp1);
+				__m128d res2 = _mm_mul_pd(a1, tmp2);
+				__m128d res3 = _mm_mul_pd(a4, tmp1);
+				__m128d res4 = _mm_mul_pd(a4, tmp2);
+
+				__m128d res5 = _mm_mul_pd(b1, tmp3);
+				__m128d res6 = _mm_mul_pd(b1, tmp4);
+				__m128d res7 = _mm_mul_pd(b4, tmp3);
+				__m128d res8 = _mm_mul_pd(b4, tmp4);
+				
+				__m128d res9  = _mm_min_pd(res1, res5);
+				__m128d res10 = _mm_min_pd(res2, res6);
+				__m128d res11 = _mm_min_pd(res3, res7);
+				__m128d res12 = _mm_min_pd(res4, res8);
+
+				sum1 = _mm_add_pd(sum1,  res9);
+				sum2 = _mm_add_pd(sum2, res10);
+				sum3 = _mm_add_pd(sum3, res11);
+				sum4 = _mm_add_pd(sum4, res12);
 			}
-
-			double temp[2];
-			_mm_store_pd(temp, sum);
-			C[n*i+j] = temp[0]+temp[1];
-			
+			sum1 = _mm_hadd_pd(sum1, zero);
+			sum2 = _mm_hadd_pd(sum2, zero);
+			sum3 = _mm_hadd_pd(sum3, zero);
+			sum4 = _mm_hadd_pd(sum4, zero);
+			_mm_store_sd(C+n*i+j, sum1);
+			_mm_store_sd(C+n*i+j+1, sum2);
+			_mm_store_sd(C+n*(i+1)+j, sum3);
+			_mm_store_sd(C+n*(i+1)+j+1, sum4);
 		}
 	}
 }

@@ -17,17 +17,28 @@
 // Procedure mvm10: Serial code (do not need to modify)
 
 void vec_mvm10(float const * A, float const * x, float * y) {
-  for(int i = 0; i < 10; i++) {
-      float t = 0.f;
-      __m256 res = _mm256_setzero_ps();
-      __m256 x1 = _mm256_load_ps(x);
-      __m128 res1 = _mm_setzero_ps();
-      __m128 x2 = _mm_load_ps(x+8);
-      for(int j = 0; j < 10; j++)
-        t += A[i*10+j]*x[j];
-      y[i] = t;
-  }
+  __m256 zero = _mm256_setzero_ps();
+  __m256 x1_1 = _mm256_load_ps(x);
+  __m256i mask = _mm256_set_epi32(1,1,0,0,0,0,1,1);
+  __m256i store_mask = _mm256_set_epi32(0,0,0,0,0,0,0,1);
+  __m256 x1_2 = _mm256_maskload_ps(x+8, mask);
 
+  for(int i = 0; i < 10; i++) {
+      __m256 res1_1 = _mm256_setzero_ps();
+      __m256 res1_2 = _mm256_setzero_ps();
+
+      __m256 A1_1 = _mm256_load_ps(A+10*i);
+      __m256 A1_2 = _mm256_maskload_ps(A+10*i+8, mask);
+
+      res1_1 = _mm256_mul_ps(x1_1, A1_1);
+      res1_2 = _mm256_mul_ps(x1_2, A1_2);
+      printf("Test x %f %f %f\n", x1_2[0], x1_2[1], x1_2[2]);
+      __m256 res1_3 = _mm256_hadd_ps(res1_1, res1_2);
+      res1_3 = _mm256_hadd_ps(res1_3, zero);
+      res1_3 = _mm256_hadd_ps(res1_3, zero);
+      res1_3 = _mm256_hadd_ps(res1_3, zero);
+      _mm256_maskstore_ps(y+i, store_mask, res1_3);
+  }
 }
 
 
@@ -51,12 +62,12 @@ void mvm10(float const * A, float const * x, float * y) {
  * Do not need to modify from here on
  */
 
-#define RUNS     400
+#define RUNS     1
 #define CYCLES_REQUIRED 1e7
 
 void verify(float const * A, float const * x, float const * y)
 {
-  float * temp = (float *) _mm_malloc(sizeof(float)*10, 16);
+  float * temp = (float *) _mm_malloc(sizeof(float)*10, 32);
   setzero(temp, 10, 1);
   printf("Verifying\n");
   for(int i = 0; i < 10; i++) {

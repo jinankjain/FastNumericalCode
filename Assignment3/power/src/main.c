@@ -92,7 +92,7 @@ int main () {
     uint64_t cycles_avx;
     uint64_t cycles_scalar;
 
-    pow_avx_init ();
+    pow_avx_init();
     init_values ();
     perf_init ();
 

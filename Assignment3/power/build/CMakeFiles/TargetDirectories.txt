@@ -1,0 +1,6 @@
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/power/build/CMakeFiles/rebuild_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/power/build/CMakeFiles/edit_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/power/build/CMakeFiles/comp.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/power/build/lib/CMakeFiles/rebuild_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/power/build/lib/CMakeFiles/edit_cache.dir
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/power/build/lib/CMakeFiles/pcm.dir

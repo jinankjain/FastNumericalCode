@@ -31,6 +31,8 @@ comp.h
 /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/Matrix_Computation/src/comp.h
 emmintrin.h
 /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/Matrix_Computation/src/emmintrin.h
+pmmintrin.h
+/Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/Matrix_Computation/src/pmmintrin.h
 
 /Users/jinankjain/ETHZ/HWFNC/FastNumericalCode/Assignment3/Matrix_Computation/src/main.c
 stdio.h
