@@ -21,6 +21,7 @@ void vec_mvm10(float const * A, float const * x, float * y) {
   __m256 x1_1 = _mm256_load_ps(x);
   __m256i mask1 = _mm256_set_epi32(0,0,0,0,0,0,0xFFFFFFFF,0xFFFFFFFF);
   __m256i store_mask = _mm256_set_epi32(0,0,0,0,0,0,0,0xFFFFFFFF);
+  __m256i perm_mask = _mm256_set_epi32(1, 1, 1, 1, 1, 1, 4, 0);
   __m256 x1_2 = _mm256_maskload_ps(x+8, mask1);
 
   for(int i = 0; i < 10; i++) {
@@ -37,6 +38,14 @@ void vec_mvm10(float const * A, float const * x, float * y) {
   
       res1_3 = _mm256_hadd_ps(res1_3, zero);
       res1_3 = _mm256_hadd_ps(res1_3, zero);
+      // res1_3 = _mm256_permutevar8x32_ps(res1_3, perm_mask);
+      // for(int j=0; j<8; j++) {
+      //   printf("%f ", res1_3[j]);
+      // }
+      // printf("\n");
+      // res1_3 = _mm256_hadd_ps(res1_3, zero);
+      // _mm256_maskstore_ps (y+i, store_mask, res1_3);
+
       float tmp[8];
       _mm256_store_ps(tmp, res1_3);
       y[i] = tmp[0]+tmp[4];

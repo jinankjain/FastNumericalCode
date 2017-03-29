@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-O3 -mavx -std=c99
+CFLAGS=-O3 -mavx -mavx2 -std=c99
 VERIFY=-DVERIFY
 
 all: mvm10
