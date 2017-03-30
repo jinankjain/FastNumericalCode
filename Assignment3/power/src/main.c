@@ -8,7 +8,7 @@
 #include "pow_avx.h"
 #include "pow_scalar.h"
 
-#define N 6
+#define N 1024
 
 double   input          [N];
 double   output_math    [N];

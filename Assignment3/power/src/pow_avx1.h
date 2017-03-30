@@ -8,41 +8,25 @@ void pow_avx_init () {
     ONES=_mm256_set1_pd(1.0);
 }
 
-void print_vector(__m256d vec){
-    double buf[4];
-    _mm256_storeu_pd(buf,vec);
-    printf("%1.0f %1.0f %1.0f %1.0f\n",buf[0], buf[1], buf[2], buf[3]);
-}
-
-void print_vector_log(__m256d vec){
-    double buf[4];
-    _mm256_storeu_pd(buf,vec);
-    for(int i=0; i<4; ++i){
-        buf[i]=log(buf[i])/log(1.0000001);
-    }
-    printf("%1.0f %1.0f %1.0f %1.0f\n", buf[0], buf[1], buf[2], buf[3]);
-}
-
 #define INIT_VI_MASKS(_vi_name, _u_name)\
-    __m256i _vi_name=_mm256_set_epi64x (_u_name<<60, _u_name<<61, _u_name<<62, _u_name<<63);
+    __m256i _vi_name = _mm256_set_epi64x (_u_name<<60, _u_name<<61, _u_name<<62, _u_name<<63);
 
-#define CREATE_MASK(_mask_name, _vi_name)\
-    __m256d _mask_name=_mm256_castsi256_pd(_vi_name);
+#define CREATE_MASK(_mask_name, _vi_name) __m256d _mask_name = _mm256_castsi256_pd(_vi_name);
 
 #define DO_THE_THING(_base_name, _result_name, _mask_name){\
-    _base_name=_mm256_blendv_pd(ONES, _base_name, _mask_name);\
-    _result_name=_base_name;\
-    __m256d tmp=_base_name;\
-    tmp=_mm256_permute_pd(_base_name, 0x5);\
-    _result_name=_mm256_mul_pd(tmp, _base_name);\
-    tmp=_mm256_permute2f128_pd(_result_name, _result_name, 0x1);\
-    _result_name=_mm256_mul_pd(tmp, _result_name);\
+    _base_name = _mm256_blendv_pd(ONES, _base_name, _mask_name);\
+    _result_name = _base_name;\
+    __m256d tmp = _base_name;\
+    tmp = _mm256_permute_pd(_base_name, 0x5);\
+    _result_name = _mm256_mul_pd(tmp, _base_name);\
+    tmp = _mm256_permute2f128_pd(_result_name, _result_name, 0x1);\
+    _result_name = _mm256_mul_pd(tmp, _result_name);\
 }
 
 #define INIT_BASE(_base_name)\
-    _base_name=_mm256_mul_pd(_base_name, _base_name);\
-    _base_name=_mm256_mul_pd(_base_name, _base_name);\
-    _base_name=_mm256_mul_pd(_base_name, _base_name);\
+    _base_name = _mm256_mul_pd(_base_name, _base_name);\
+    _base_name = _mm256_mul_pd(_base_name, _base_name);\
+    _base_name = _mm256_mul_pd(_base_name, _base_name);\
 
 #define FINISH_BASE(_base_name)\
     var_x_tmp=_mm256_blend_pd(_base_name, ONES, 0x1);\
@@ -53,15 +37,15 @@ void print_vector_log(__m256d vec){
     _base_name=_mm256_mul_pd(_base_name, var_x_tmp);\
 
 double pow_avx (double x, uint32_t n_int) {
-    u_int8_t u_mask1=0xF; u_mask1&=n_int; n_int=n_int>>4;
+    uint64_t u_mask1=0xF; u_mask1&=n_int; n_int=n_int>>4;
 
-    u_int8_t u_mask2=0xF; u_mask2&=n_int; n_int=n_int>>4;
-    u_int8_t u_mask3=0xF; u_mask3&=n_int; n_int=n_int>>4;
-    u_int8_t u_mask4=0xF; u_mask4&=n_int; n_int=n_int>>4;
-    u_int8_t u_mask5=0xF; u_mask5&=n_int; n_int=n_int>>4;
-    u_int8_t u_mask6=0xF; u_mask6&=n_int; n_int=n_int>>4;
-    u_int8_t u_mask7=0xF; u_mask7&=n_int; n_int=n_int>>4;
-    u_int8_t u_mask8=0xF; u_mask8&=n_int; n_int=n_int>>4;
+    uint64_t u_mask2=0xF; u_mask2&=n_int; n_int=n_int>>4;
+    uint64_t u_mask3=0xF; u_mask3&=n_int; n_int=n_int>>4;
+    uint64_t u_mask4=0xF; u_mask4&=n_int; n_int=n_int>>4;
+    uint64_t u_mask5=0xF; u_mask5&=n_int; n_int=n_int>>4;
+    uint64_t u_mask6=0xF; u_mask6&=n_int; n_int=n_int>>4;
+    uint64_t u_mask7=0xF; u_mask7&=n_int; n_int=n_int>>4;
+    uint64_t u_mask8=0xF; u_mask8&=n_int; n_int=n_int>>4;
 
     INIT_VI_MASKS(vi_mask1, u_mask1);
     INIT_VI_MASKS(vi_mask2, u_mask2);
